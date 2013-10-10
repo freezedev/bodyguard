@@ -1,5 +1,3 @@
-do (name = 'guardian') ->
+do (name = 'bodyguard') ->
   udefine.configure (root) ->
-    @globals[name.toLowerCase()] = root[name]
-  
-    @inject[name.toLowerCase()] = {name, root}
+    udefine.inject.add name
