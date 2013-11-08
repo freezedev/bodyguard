@@ -3,7 +3,7 @@ udefine 'bodyguard', ->
   noop = ->
 
   bodyguard = (definition, obj, context) ->
-    result = {}
+    context or= {}
     
     if Array.isArray definition
       for method in definition
