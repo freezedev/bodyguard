@@ -2,7 +2,7 @@ udefine 'guardian', ->
   
   noop = ->
 
-  bodyguard = (definition, obj) ->
+  bodyguard = (definition, obj, context) ->
     result = {}
     
     if Array.isArray definition
