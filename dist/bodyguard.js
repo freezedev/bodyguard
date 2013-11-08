@@ -1,13 +1,9 @@
 (function() {
   (function(name) {
     return udefine.configure(function(root) {
-      this.globals[name.toLowerCase()] = root[name];
-      return this.inject[name.toLowerCase()] = {
-        name: name,
-        root: root
-      };
+      return udefine.inject.add(name);
     });
-  })('guardian');
+  })('bodyguard');
 
 }).call(this);
 
@@ -15,7 +11,7 @@
   udefine('guardian', function() {
     var bodyguard, noop;
     noop = function() {};
-    bodyguard = function(definition, obj) {
+    bodyguard = function(definition, obj, context) {
       var method, result, _i, _len, _results;
       result = {};
       if (Array.isArray(definition)) {
