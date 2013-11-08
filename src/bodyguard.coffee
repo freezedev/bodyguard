@@ -10,5 +10,7 @@ udefine 'bodyguard', ->
         if obj[method]?
           obj[method] = noop
           
+    context
+          
 
   bodyguard
