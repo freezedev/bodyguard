@@ -8,24 +8,21 @@
 }).call(this);
 
 (function() {
-  udefine('guardian', function() {
+  udefine('bodyguard', function() {
     var bodyguard, noop;
     noop = function() {};
     bodyguard = function(definition, obj, context) {
-      var method, result, _i, _len, _results;
-      result = {};
+      var method, _i, _len;
+      context || (context = {});
       if (Array.isArray(definition)) {
-        _results = [];
         for (_i = 0, _len = definition.length; _i < _len; _i++) {
           method = definition[_i];
           if (obj[method] != null) {
-            _results.push(obj[method] = noop);
-          } else {
-            _results.push(void 0);
+            obj[method] = noop;
           }
         }
-        return _results;
       }
+      return context;
     };
     return bodyguard;
   });
