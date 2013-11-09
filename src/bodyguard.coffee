@@ -2,15 +2,15 @@ udefine 'bodyguard', ->
   
   noop = ->
 
-  bodyguard = (definition, obj, context) ->
-    context or= {}
+  bodyguard = (name, definition, obj) ->
+    returnFunction = ->
+    returnFunction.constructor.name = name
     
     if Array.isArray definition
       for method in definition
-        if obj[method]?
-          obj[method] = noop
+        returnFunction::[method] = obj[method] or noop
           
-    context
+    returnFunction
           
 
   bodyguard
