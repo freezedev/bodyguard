@@ -15,7 +15,7 @@ udefine 'bodyguard', ->
         else
           unless bodyguard.silent
             console?.warn?("Method #{method} is not implemented.")
-          returnFunction::[method] = noop
+          returnFunction::[method] = -> bind obj[method], @
           
     returnFunction
           
