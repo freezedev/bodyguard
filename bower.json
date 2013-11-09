@@ -1,0 +1,26 @@
+{
+  "name": "bodyguard",
+  "version": "0.1.0",
+  "homepage": "https://github.com/freezedev/bodyguard",
+  "authors": [
+    "Johannes Stein <johannesstein@freeze-dev.com>"
+  ],
+  "description": "Because sometimes you want something like interfaces in JavaScript",
+  "main": "dist/bodyguard.js",
+  "keywords": [
+    "interface",
+    "bodyguard",
+    "guard"
+  ],
+  "license": "Public domain",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "udefine": "~0.8.2"
+  }
+}
