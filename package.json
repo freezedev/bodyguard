@@ -1,11 +1,18 @@
 {
   "name": "bodyguard",
   "version": "0.1.0",
+  "dependencies": {
+    "udefine": "~0.8.2"
+  },
+  "main": "dist/bodyguard.js",
   "devDependencies": {
     "grunt": "0.4.x",
     "grunt-coffeelint": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-coffee": "*",
     "matchdep": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }
