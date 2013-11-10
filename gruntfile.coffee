@@ -10,6 +10,11 @@ module.exports = (grunt) ->
       compile:
         files:
           'dist/<%= pkg.name %>.js': ['udefine/*.coffee', 'src/*.coffee']
+    mochaTest:
+      options:
+        reporter: 'spec'
+      test:
+        src: ['test/**/*.js']
     uglify:
       options:
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
@@ -21,5 +26,5 @@ module.exports = (grunt) ->
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
   
-  grunt.registerTask 'test', 'Lints and unit tests', ['coffeelint']
+  grunt.registerTask 'test', 'Lints and unit tests', ['coffeelint', 'mochaTest']
   grunt.registerTask 'default', 'Default task', ['test', 'coffee', 'uglify']
