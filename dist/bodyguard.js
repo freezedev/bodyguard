@@ -17,14 +17,15 @@
       }
     };
     bodyguard = function(name, definition, obj) {
-      var method, returnFunction, _i, _len;
-      returnFunction = function() {};
-      returnFunction.constructor.name = name;
+      var method, returnable, _i, _len;
+      returnable = {};
+      returnable[name] = function() {};
+      returnable[name].constructor.name = name;
       if (Array.isArray(definition)) {
         for (_i = 0, _len = definition.length; _i < _len; _i++) {
           method = definition[_i];
           if (obj[method] != null) {
-            returnFunction.prototype[method] = obj[method] || noop;
+            returnable[name].prototype[method] = obj[method] || noop;
           } else {
             if (!bodyguard.silent) {
               if (typeof console !== "undefined" && console !== null) {
@@ -33,16 +34,22 @@
                 }
               }
             }
-            returnFunction.prototype[method] = function() {
+            returnable[name].prototype[method] = function() {
               return bind(obj[method], this);
             };
           }
         }
       }
-      return returnFunction;
+      return returnable[name];
     };
     bodyguard.silent = true;
     return bodyguard;
   });
+
+  if (udefine.env.commonjs) {
+    udefine.require('bodyguard', function(bodyguard) {
+      return module.exports = bodyguard;
+    });
+  }
 
 }).call(this);
