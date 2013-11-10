@@ -10,7 +10,9 @@
     "grunt-coffeelint": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-coffee": "*",
-    "matchdep": "*"
+    "matchdep": "*",
+    "grunt-mocha-test": "*",
+    "chai": "*"
   },
   "scripts": {
     "test": "grunt test"
