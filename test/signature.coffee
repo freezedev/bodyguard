@@ -6,3 +6,6 @@ bodyguard = require '../dist/bodyguard'
 describe 'bodyguard', ->
   it 'is a function', ->
     expect(bodyguard).to.be.a('function')
+
+  it 'has silence property', ->
+    expect(bodyguard).to.have.a.property('silent')
