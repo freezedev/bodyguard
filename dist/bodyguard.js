@@ -18,6 +18,12 @@
     };
     bodyguard = function(name, definition, obj) {
       var method, returnable, _i, _len;
+      if (!name) {
+        throw new Error('Bodyguard function needs to have a name');
+      }
+      if (!(definition && obj)) {
+        return void 0;
+      }
       returnable = {};
       returnable[name] = function() {};
       returnable[name].constructor.name = name;
