@@ -23,3 +23,7 @@ udefine 'bodyguard', ->
   bodyguard.silent = true
 
   bodyguard
+  
+# Our current CommonJS workaround
+if udefine.env.commonjs
+  udefine.require 'bodyguard', (bodyguard) -> module.exports = bodyguard
