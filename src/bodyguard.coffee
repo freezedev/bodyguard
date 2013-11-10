@@ -5,6 +5,9 @@ udefine 'bodyguard', ->
   bind = (func, context) -> func.apply context, arguments if func?
 
   bodyguard = (name, definition, obj) ->
+    throw new Error 'Bodyguard function needs to have a name' unless name
+    return undefined unless definition and obj
+    
     returnable = {}
     returnable[name] = ->
     returnable[name].constructor.name = name
