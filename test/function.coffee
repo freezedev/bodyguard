@@ -15,10 +15,15 @@ instance = new ReturnedClass()
 
 describe 'bodyguard', ->
   it 'returns a new class', ->
-    expect(newClass).to.be.a('function')
+    expect(ReturnedClass).to.be.a('function')
 
   it 'Returned class can be instantiated', ->
+    expect(instance).to.be.a('object')
 
   it 'Returned class has methods according to the parent class', ->
-    expect(newClass).to.have.a.property('a')
-    expect(newClass).to.have.a.property('b')
+    expect(instance).to.have.a.property('a')
+    expect(instance).to.have.a.property('b')
+    
+  it 'Methods have correct return values', ->
+    expect(instance.a()).to.equal(5)
+    expect(instance.b()).to.equal(7)
