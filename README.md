@@ -1,6 +1,10 @@
 Bodyguard
 =========
 
+[![Build Status](https://travis-ci.org/freezedev/bodyguard.png?branch=master)](https://travis-ci.org/freezedev/bodyguard)
+[![Dependency Status](https://david-dm.org/freezedev/bodyguard.png)](https://david-dm.org/freezedev/bodyguard)
+[![devDependency Status](https://david-dm.org/freezedev/bodyguard/dev-status.png)](https://david-dm.org/freezedev/bodyguard#info=devDependencies)
+
 Because sometimes you want something like interfaces in JavaScript
 
 Installation
